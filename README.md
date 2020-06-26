@@ -15,11 +15,11 @@ Inspired by Rainbow CSV - **Rainbow Print** adds colors to the standard outputs 
 How rainbow print helps
 
 ### Default print a dictionary of metrics for 10 steps
-
+![Dict Print](https://github.com/kingspp/rainbow-print/blob/master/assets/print_dict.png?raw=true)
 ### Default print a string of metrics for 10 steps
-
+![Str Print](https://github.com/kingspp/rainbow-print/blob/master/assets/print_str.png?raw=true)
 ### Rainbow Print - Dark Mode
-
+![Rainbow Print](https://github.com/kingspp/rainbow-print/blob/master/assets/printr.png?raw=true)
 ### Rainbow Print - Light Mode
 
 ## Requirements
