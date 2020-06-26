@@ -19,8 +19,9 @@ How rainbow print helps
 ### Default print a string of metrics for 10 steps
 ![Str Print](https://github.com/kingspp/rainbow-print/blob/master/assets/print_str.png?raw=true)
 ### Rainbow Print - Dark Mode
-![Rainbow Print](https://github.com/kingspp/rainbow-print/blob/master/assets/printr.png?raw=true)
+![Rainbow Print Dark](https://github.com/kingspp/rainbow-print/blob/master/assets/printr-dark.png?raw=true)
 ### Rainbow Print - Light Mode
+![Rainbow Print Light](https://github.com/kingspp/rainbow-print/blob/master/assets/printr-light.png?raw=true)
 
 ## Requirements
 1. python >3
