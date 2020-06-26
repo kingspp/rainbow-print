@@ -14,9 +14,23 @@ __all__ = ['printr', 'RainbowPrint']
 
 from sty import fg
 import typing
+import logging
+from abc import ABCMeta
 
 
-class RainbowPrint(object):
+class Singleton(type, metaclass=ABCMeta):
+    """
+    Singleton Class for
+    """
+    _instances = {}
+
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
+        return cls._instances[cls]
+
+
+class RainbowPrint(metaclass=Singleton):
     _DARK_VIOLET = fg(5, 152, 154)
     _DARK_INDIGO = fg(179, 128, 168)
     _DARK_BLUE = fg(112, 154, 180)
@@ -38,7 +52,6 @@ class RainbowPrint(object):
     _LIGHT_PALETTE = [_LIGHT_VIOLET, _LIGHT_BLUE, _LIGHT_GREEN, _LIGHT_INDIGO, _LIGHT_ORANGE, _LIGHT_YELLOW, _LIGHT_RED]
 
     def __init__(self, theme: str = "dark", colors: typing.List[fg] = None):
-
         if colors is None:
             self.theme = theme
             if self.theme == 'dark':
@@ -50,20 +63,24 @@ class RainbowPrint(object):
         else:
             self.theme = theme
             self.rainbow_colors = colors
+        super().__init__()
 
-    def __call__(self, data: typing.Union[str, dict], sep: str = ' | '):
+    def _build_str(self, data: typing.Union[str, dict], sep: str = ' | '):
         if isinstance(data, str):
             str_builder = ''
             for e, item in enumerate(data.split(sep)):
                 str_builder += self.rainbow_colors[int(e % 7)] + f"{item}" + fg.rs + f'{sep}'
-            print(str_builder)
         elif isinstance(data, dict):
             str_builder = ''
             for e, (k, v) in enumerate(data.items()):
                 str_builder += self.rainbow_colors[int(e % 7)] + f"{k}: {str(v)}" + fg.rs + f'{sep}'
-            print(str_builder)
         else:
             raise Exception(f'Supported types of data: [str, dict]. Given:{type(data)}')
+        return str_builder[:-1]
+
+    def __call__(self, data: typing.Union[str, dict], sep: str = ' | '):
+        str_builder = self._build_str(data=data)
+        print(str_builder)
 
     def update_palette(self, colors: typing.List[fg]):
         self.__init__(theme='custom', colors=colors)
@@ -86,6 +103,34 @@ class RainbowPrint(object):
 
 
 printr = RainbowPrint()
+
+
+class RainbowLogger():
+    def __init__(self):
+        self.logger = None
+
+    def getLogger(self, name):
+        self.logger = logging.getLogger(name=name)
+        return self
+
+    def info(self, message, sep='|'):
+        str_builder = printr._build_str(data=message, sep=sep)
+        self.logger.info(str_builder)
+
+    def debug(self, message, sep='|'):
+        str_builder = printr._build_str(data=message, sep=sep)
+        self.logger.debug(str_builder)
+
+    def error(self, message, sep='|'):
+        str_builder = printr._build_str(data=message, sep=sep)
+        self.logger.error(str_builder)
+
+    def warn(self, message, sep='|'):
+        str_builder = printr._build_str(data=message, sep=sep)
+        self.logger.warn(str_builder)
+
+
+rlogging = RainbowLogger()
 
 if __name__ == '__main__':
     print("Dictionary Usage:")
