@@ -30,6 +30,7 @@ class TestSimple(unittest.TestCase):
         return d
 
     def test_print_dict(self):
+        printr.set_light_palette()
         for i in range(10):
             printr(self.generate_random_data(string=False))
 
