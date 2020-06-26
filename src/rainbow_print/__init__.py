@@ -41,9 +41,9 @@ class RainbowPrint(object):
 
         if colors is None:
             self.theme = theme
-            if self.theme == 'light':
+            if self.theme == 'dark':
                 self.rainbow_colors = self.DARK_PALETTE
-            elif self.theme == 'dark':
+            elif self.theme == 'light':
                 self.rainbow_colors = self.LIGHT_PALETTE
             else:
                 raise Exception(f"Supported themes - {{light, dark}}. Given {self.theme}")
@@ -51,16 +51,16 @@ class RainbowPrint(object):
             self.theme = theme
             self.rainbow_colors = colors
 
-    def __call__(self, string: str = None, data_dict: dict = None, sep: str = '|'):
-        if string is not None:
+    def __call__(self, data: typing.Union[str, dict], sep: str = '|'):
+        if isinstance(data, str):
             pass
-        elif data_dict is not None:
+        elif isinstance(data, dict):
             str_builder = ''
-            for e, (k, v) in enumerate(data_dict.items()):
+            for e, (k, v) in enumerate(data.items()):
                 str_builder += self.rainbow_colors[int(e % 7)] + f"{k}: {str(v)}" + fg.rs + ' | '
             print(str_builder)
         else:
-            raise Exception('Either provide string or data_dict. No data to print')
+            raise Exception(f'Supported types of data: [str, dict]. Given:{type(data)}')
 
     def update_palette(self, colors: typing.List[fg]):
         self.__init__(theme='custom', colors=colors)
@@ -86,3 +86,10 @@ class RainbowPrint(object):
 
 
 printr = RainbowPrint()
+
+if __name__ == '__main__':
+    data = {"Episode": 10, "Episode Len": 5, "Cost": 0.95, "Reward": 135, "Mode": "Explore"}
+    print(data)
+
+    printr(data)
+    printr.info()

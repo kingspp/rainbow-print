@@ -23,7 +23,7 @@ setup(
     # package, this name will be registered for you. It will determine how
     # users can install this project, e.g.:
     #
-    # $ pip install rainbow-print
+    # $ pip install rainbow_print
     #
     # And where it will live on PyPI: https://pypi.org/project/sampleproject/
     #
@@ -43,7 +43,7 @@ setup(
     # This is a one-line description or tagline of what your project does. This
     # corresponds to the "Summary" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#summary
-    description='A rainbow-print Python project',  # Optional
+    description='A rainbow_print Python project',  # Optional
 
     # This is an optional longer description of your project that represents
     # the body of text which users will see when they visit PyPI.
@@ -115,7 +115,7 @@ setup(
     # Note that this is a list of additional keywords, separated
     # by commas, to be used to assist searching for the distribution in a
     # larger catalog.
-    keywords='rainbow-print, setuptools, development',  # Optional
+    keywords='rainbow_print, setuptools, development',  # Optional
 
     # When your source code is in a subdirectory under the project root, e.g.
     # `src/`, it is necessary to specify the `package_dir` argument.
@@ -162,7 +162,7 @@ setup(
     # If there are data files included in your packages that need to be
     # installed, specify them here.
     # package_data={  # Optional
-    #     'rainbow-print': ['package_data.dat'],
+    #     'rainbow_print': ['package_data.dat'],
     # },
 
     # Although 'package_data' is the preferred approach, in some case you may
@@ -177,11 +177,11 @@ setup(
     # `pip` to create the appropriate form of executable for the target
     # platform.
     #
-    # For example, the following would provide a command called `rainbow-print` which
+    # For example, the following would provide a command called `rainbow_print` which
     # executes the function `main` from this package when invoked:
     # entry_points={  # Optional
     #     'console_scripts': [
-    #         'rainbow-print=rainbow-print:main',
+    #         'rainbow_print=rainbow_print:main',
     #     ],
     # },
 
