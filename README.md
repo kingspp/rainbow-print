@@ -19,6 +19,7 @@ Inspired by Rainbow CSV - **Rainbow Print** adds colors to the standard outputs 
 * Support for Dark and Light backgrounds
 * Supports string print based on separator / dictionary's key-value based print
 * Supports custom colors based on ``sty.fg`` package
+* Supports use of python logging frameword for advance usecases
 
 ## Demo 
 
