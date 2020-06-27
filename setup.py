@@ -8,7 +8,7 @@ https://github.com/pypa/sampleproject
 # Always prefer setuptools over distutils
 from setuptools import setup, find_packages
 from os import path
-from rainbow_print.metadata import metadata
+from .rainbow_print.metadata import metadata
 
 here = path.abspath(path.dirname(__file__))
 
