@@ -5,6 +5,10 @@
 import unittest
 import random
 from rainbow_print import printr
+from rainbow_print import rlogging
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = rlogging.getLogger(__name__)
 
 
 class TestSimple(unittest.TestCase):
@@ -25,18 +29,18 @@ class TestSimple(unittest.TestCase):
         if string:
             str_builder = ''
             for k, v in d.items():
-                str_builder += f"{k}:{v} "
+                str_builder += f"{k}:{v},"
             return str_builder
         return d
 
-    def test_print_dict(self):
-        printr.set_light_palette()
-        for i in range(10):
-            printr(self.generate_random_data(string=False))
-
-    # def test_print_str(self):
+    # def test_print_dict(self):
+    #     printr.update_light_palette()
     #     for i in range(10):
-    #         print(self.generate_random_data(string=True))
+    #         printr(self.generate_random_data(string=False))
+
+    def test_print_str(self):
+        for i in range(10):
+            logger.info(self.generate_random_data(string=True), sep=',')
 
 
 if __name__ == '__main__':

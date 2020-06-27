@@ -1,3 +1,13 @@
+<!-- Start of Badges -->
+![version badge](https://img.shields.io/badge/rztrl%20version-0.0.0-green.svg)
+![build badge](https://img.shields.io/badge/build-passing-green.svg)
+![coverage badge](https://img.shields.io/badge/coverage-0.00%25|%200.0k/0k%20lines-green.svg)
+![test badge](https://img.shields.io/badge/tests-0%20total%7C0%20%E2%9C%93%7C0%20%E2%9C%98-green.svg)
+![docs badge](https://img.shields.io/badge/docs-none-green.svg)
+![commits badge](https://img.shields.io/badge/commits%20since%20v0.0.0-0-green.svg)
+![footprint badge](https://img.shields.io/badge/mem%20footprint%20-0.00%20Mb-green.svg)
+<!-- End of Badges -->
+
 # Rainbow Print
 
 Inspired by Rainbow CSV - **Rainbow Print** adds colors to the standard outputs to ease the process of monitoring respective data / metrics
@@ -34,10 +44,31 @@ pip install rainbow-print
 
 ## Usage
 ```python
+# Print
 from rainbow_print import printr
 data = {"Episode": 10, "Episode Len":5, "Cost": 0.95, "Reward":135, "Mode":"Explore"}
 printr(data)
-
+```
+![]()
+```python
+data = f"Episode:{10}, Episode Len:{5}, Cost:{0.95}, Reward:{135}, Mode:{'Explore'}"
+printr(data, sep=',')
+```
+![]()
+```python
+# Logging
+from rainbow_print import rlogging
+logger = rlogging.getLogger(__name__)
+data = {"Episode": 10, "Episode Len":5, "Cost": 0.95, "Reward":135, "Mode":"Explore"}
+logger.info(data)
+```
+![]()
+```python
+data = f"Episode:{10}, Episode Len:{5}, Cost:{0.95}, Reward:{135}, Mode:{'Explore'}"
+logger.debug(data, sep=',')
+```
+![]()
+```python
 # Get information regarding current configuration
 printr.info()
 >>Theme: dark
@@ -62,5 +93,4 @@ printr.update_dark_palette(colors)
 # Set colors for light palette
 colors = [sty.fg(0,0,0), sty.fg(255,255,255)]
 printr.update_light_palette(colors)
-
 ```
