@@ -5,10 +5,10 @@ Inspired by Rainbow CSV - **Rainbow Print** adds colors to the standard outputs 
 ## Main features
 
 * Highlights data points in different colors to ease monitoring capabilities
-* By default provides 7 colors (rolling) for N Variables. User can provide N colors 
+* By default provides 7 colors (light and dark each) for N Variables(rolling). Supports N colors 
 * Support for Dark and Light backgrounds
-* Supports string print based on separator / dictionary key-value based print
-* Supports custom colors based on ``sty`` package
+* Supports string print based on separator / dictionary's key-value based print
+* Supports custom colors based on ``sty.fg`` package
 
 ## Demo 
 
@@ -36,7 +36,31 @@ pip install rainbow-print
 ```python
 from rainbow_print import printr
 data = {"Episode": 10, "Episode Len":5, "Cost": 0.95, "Reward":135, "Mode":"Explore"}
+printr(data)
+
+# Get information regarding current configuration
+printr.info()
+>>Theme: dark
+>>Colors: ['\x1b[38;2;5;152;154m', '\x1b[38;2;116;162;103m', '\x1b[38;2;179;128;168m', '\x1b[38;2;255;127;0m', '\x1b[38;2;112;154;180m', '\x1b[38;2;255;255;0m', '\x1b[38;2;255;0;0m']
 ```
 
 ## Configuration
+```python
+# By default printr works in dark mode
+from rainbow_print import printr
 
+# Switch to light palette
+printr.set_light_palette()
+
+# Switch to dark palette
+printr.set_dark_palette()
+
+# Set colors for dark palette
+colors = [sty.fg(0,0,0), sty.fg(255,255,255)]
+printr.update_dark_palette(colors)
+
+# Set colors for light palette
+colors = [sty.fg(0,0,0), sty.fg(255,255,255)]
+printr.update_light_palette(colors)
+
+```
