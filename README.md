@@ -6,6 +6,7 @@
 ![docs badge](https://img.shields.io/badge/docs-none-green.svg)
 ![commits badge](https://img.shields.io/badge/commits%20since%20v0.0.0-0-green.svg)
 ![footprint badge](https://img.shields.io/badge/mem%20footprint%20-0.00%20Mb-green.svg)
+[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/kingspprathyush@gmail.com)
 <!-- End of Badges -->
 
 # Rainbow Print
