@@ -8,9 +8,12 @@ https://github.com/pypa/sampleproject
 # Always prefer setuptools over distutils
 from setuptools import setup, find_packages
 from os import path
-from .rainbow_print.metadata import metadata
+import sys
 
 here = path.abspath(path.dirname(__file__))
+sys.path.append(here)
+
+from rainbow_print.metadata import metadata
 
 # Get the long description from the README file
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
