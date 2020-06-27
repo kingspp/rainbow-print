@@ -49,12 +49,12 @@ from rainbow_print import printr
 data = {"Episode": 10, "Episode Len":5, "Cost": 0.95, "Reward":135, "Mode":"Explore"}
 printr(data)
 ```
-![]()
+![printr dict](https://github.com/kingspp/rainbow-print/blob/master/assets/printr-dict-1.png?raw=true)
 ```python
 data = f"Episode:{10}, Episode Len:{5}, Cost:{0.95}, Reward:{135}, Mode:{'Explore'}"
 printr(data, sep=',')
 ```
-![]()
+![printr str](https://github.com/kingspp/rainbow-print/blob/master/assets/printr-str-1.png?raw=true)
 ```python
 # Logging
 from rainbow_print import rlogging
@@ -62,12 +62,12 @@ logger = rlogging.getLogger(__name__)
 data = {"Episode": 10, "Episode Len":5, "Cost": 0.95, "Reward":135, "Mode":"Explore"}
 logger.info(data)
 ```
-![]()
+![logger dict](https://github.com/kingspp/rainbow-print/blob/master/assets/logger-dict-1.png?raw=true)
 ```python
 data = f"Episode:{10}, Episode Len:{5}, Cost:{0.95}, Reward:{135}, Mode:{'Explore'}"
 logger.debug(data, sep=',')
 ```
-![]()
+![logger str](https://github.com/kingspp/rainbow-print/blob/master/assets/logger-str-1.png?raw=true)
 ```python
 # Get information regarding current configuration
 printr.info()
