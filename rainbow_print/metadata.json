@@ -1,0 +1,19 @@
+{
+  "__name__": "rainbow-print",
+  "__version__": "1.0.1",
+  "__description__": "Rainbow Print adds colors to the standard outputs to ease the process of monitoring respective data / metrics",
+  "__author__": "Prathyush SP",
+  "__email__": "kingspprathyush@gmail.com",
+  "__license__": "MIT",
+  "__classifiers__": [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3 :: Only"
+  ],
+  "__url__": "https://github.com/kingspp/rainbow-print",
+  "__keywords__": "rainbow_print, print, logging, colors"
+}

@@ -4,7 +4,6 @@
 
 import unittest
 import random
-from rainbow_print import printr
 from rainbow_print import rlogging
 import logging
 logging.basicConfig(level=logging.INFO)
