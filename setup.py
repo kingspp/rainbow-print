@@ -175,7 +175,7 @@ setup(
     project_urls={  # Optional
         'Bug Reports': 'https://github.com/kingspp/rainbow-print/issues',
         'Funding': 'https://donate.pypi.org',
-        'Say Thanks!': 'http://saythanks.io/to/rainbow-print',
+        'Say Thanks!': 'https://saythanks.io/to/kingspprathyush@gmail.com',
         'Source': 'https://github.com/kingspp/rainbow-print',
     },
 )
