@@ -65,7 +65,7 @@ class RainbowPrint(metaclass=Singleton):
             self.rainbow_colors = colors
         super().__init__()
 
-    def _build_str(self, data: typing.Union[str, dict], sep: str = ' | '):
+    def _build_str(self, data: typing.Union[str, dict], sep):
         if isinstance(data, str):
             str_builder = ''
             for e, item in enumerate(data.split(sep)):
@@ -79,7 +79,7 @@ class RainbowPrint(metaclass=Singleton):
         return str_builder[:-1]
 
     def __call__(self, data: typing.Union[str, dict], sep: str = ' | '):
-        str_builder = self._build_str(data=data)
+        str_builder = self._build_str(data=data, sep=sep)
         print(str_builder)
 
     def update_palette(self, colors: typing.List[fg]):
@@ -113,19 +113,19 @@ class RainbowLogger():
         self.logger = logging.getLogger(name=name)
         return self
 
-    def info(self, message, sep='|'):
+    def info(self, message, sep=' | '):
         str_builder = printr._build_str(data=message, sep=sep)
         self.logger.info(str_builder)
 
-    def debug(self, message, sep='|'):
+    def debug(self, message, sep=' | '):
         str_builder = printr._build_str(data=message, sep=sep)
         self.logger.debug(str_builder)
 
-    def error(self, message, sep='|'):
+    def error(self, message, sep=' | '):
         str_builder = printr._build_str(data=message, sep=sep)
         self.logger.error(str_builder)
 
-    def warn(self, message, sep='|'):
+    def warn(self, message, sep=' | '):
         str_builder = printr._build_str(data=message, sep=sep)
         self.logger.warn(str_builder)
 
