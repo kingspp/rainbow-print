@@ -1,6 +1,6 @@
 {
   "__name__": "rainbow-print",
-  "__version__": "1.0.1",
+  "__version__": "1.0.5",
   "__description__": "Rainbow Print adds colors to the standard outputs to ease the process of monitoring respective data / metrics",
   "__author__": "Prathyush SP",
   "__email__": "kingspprathyush@gmail.com",

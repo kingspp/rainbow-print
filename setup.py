@@ -9,15 +9,16 @@ https://github.com/pypa/sampleproject
 from setuptools import setup, find_packages
 from os import path
 import sys
+import json
 
 here = path.abspath(path.dirname(__file__))
-sys.path.append(here)
-
-from rainbow_print.metadata import metadata
 
 # Get the long description from the README file
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
+
+with open(path.join(here, 'metadata.json'), encoding='utf-8') as f:
+    metadata = json.load(f)
 
 # Arguments marked as "Required" below must be included for upload to PyPI.
 # Fields marked as "Optional" may be commented out.
@@ -100,7 +101,7 @@ setup(
 
     # When your source code is in a subdirectory under the project root, e.g.
     # `src/`, it is necessary to specify the `package_dir` argument.
-    package_dir={'': 'rainbow_print'},  # Optional
+    # package_dir={'': 'rainbow_print'},  # Optional
 
     # You can just specify package directories manually here if your project is
     # simple. Or you can use find_packages().
@@ -111,7 +112,7 @@ setup(
     #
     #   py_modules=["my_module"],
     #
-    packages=find_packages(where='rainbow_print'),  # Required
+    packages=find_packages(include=["rainbow_print", "rainbow_print.*"], exclude=['tests']),  # Required
 
     # Specify which Python versions you support. In contrast to the
     # 'Programming Language' classifiers above, 'pip install' will check this
@@ -142,9 +143,9 @@ setup(
 
     # If there are data files included in your packages that need to be
     # installed, specify them here.
-    # package_data={  # Optional
-    #     'rainbow_print': ['package_data.dat'],
-    # },
+    package_data={  # Optional
+        'rainbow_print': ['metadata.json'],
+    },
 
     # Although 'package_data' is the preferred approach, in some case you may
     # need to place data files outside of your packages. See:
